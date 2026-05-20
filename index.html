@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Home | Northview TSA</title>
+  <link rel="icon" href="favicon.ico"/>
+  
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; color: #1a1a1a; background: #fff; }
+  a { color: #1F3864; text-decoration: none; }
+  nav { background: #1F3864; position: sticky; top: 0; z-index: 100; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 58px; }
+  .logo { color: #FFD700; font-weight: bold; font-size: 1.2rem; letter-spacing: .5px; }
+  nav ul { list-style: none; display: flex; gap: 6px; }
+  nav ul a { color: #fff; padding: 8px 14px; border-radius: 4px; font-size: .92rem; transition: background .2s; }
+  nav ul a:hover { background: rgba(255,255,255,.15); }
+  .hero { background: linear-gradient(135deg, #1F3864 60%, #2a4f8a); color: #fff; text-align: center; padding: 80px 24px 70px; }
+  .hero h1 { font-size: 2.6rem; margin-bottom: 12px; }
+  .hero .sub { font-size: 1.15rem; color: #FFD700; margin-bottom: 28px; }
+  .hero p { max-width: 620px; margin: 0 auto 32px; line-height: 1.7; opacity: .9; }
+  .btn { display: inline-block; background: #FFD700; color: #1F3864; font-weight: bold; padding: 12px 28px; border-radius: 6px; margin: 6px; font-size: .95rem; transition: opacity .2s; }
+  .btn:hover { opacity: .85; }
+  .btn-outline { background: transparent; border: 2px solid #FFD700; color: #FFD700; }
+  .section { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+  .section-title { font-size: 1.7rem; color: #1F3864; margin-bottom: 8px; }
+  .section-sub { color: #555; margin-bottom: 36px; font-size: 1rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px; transition: box-shadow .2s; }
+  .card:hover { box-shadow: 0 4px 18px rgba(31,56,100,.12); }
+  .card h3 { color: #1F3864; margin-bottom: 10px; font-size: 1.1rem; }
+  .card p { color: #555; line-height: 1.6; font-size: .95rem; }
+  .card .tag { display: inline-block; background: #e8eef7; color: #1F3864; font-size: .78rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .highlight { background: #f5f8ff; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  @media(max-width:700px){ .two-col{grid-template-columns:1fr;} nav ul{display:none;} .hero h1{font-size:1.8rem;} }
+  .steps { counter-reset: step; }
+  .step { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; }
+  .step-num { background: #1F3864; color: #FFD700; font-weight: bold; font-size: 1.1rem; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-body h4 { color: #1F3864; margin-bottom: 4px; }
+  .step-body p { color: #555; font-size: .95rem; line-height: 1.6; }
+  .officer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+  .officer-card { text-align: center; padding: 24px 16px; border: 1px solid #e0e0e0; border-radius: 10px; }
+  .officer-card .avatar { width: 80px; height: 80px; border-radius: 50%; background: #d9e4f5; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .officer-card h4 { color: #1F3864; font-size: 1rem; margin-bottom: 4px; }
+  .officer-card .role { color: #FFD700; background: #1F3864; font-size: .78rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+  .officer-card p { color: #666; font-size: .85rem; line-height: 1.5; }
+  .faq { border-top: 1px solid #e0e0e0; margin-top: 40px; }
+  .faq-item { border-bottom: 1px solid #e0e0e0; padding: 18px 0; }
+  .faq-item h4 { color: #1F3864; margin-bottom: 8px; font-size: 1rem; }
+  .faq-item p { color: #555; font-size: .93rem; line-height: 1.6; }
+  .iframe-wrap { border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+  iframe { width: 100%; border: none; }
+  .banner { background: #1F3864; color: #fff; text-align: center; padding: 50px 24px; }
+  .banner h2 { font-size: 1.7rem; margin-bottom: 12px; }
+  .banner p { opacity: .85; margin-bottom: 24px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .notice { background: #FFF9C4; border: 1px solid #FFD700; border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; font-size: .93rem; color: #555; }
+  .divider { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th { background: #1F3864; color: #fff; padding: 10px 14px; text-align: left; font-size: .9rem; }
+  td { padding: 10px 14px; border-bottom: 1px solid #eee; font-size: .92rem; color: #333; }
+  tr:hover td { background: #f5f8ff; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-weight: bold; color: #1F3864; margin-bottom: 6px; font-size: .92rem; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: .95rem; font-family: Arial; }
+  .form-group textarea { height: 130px; resize: vertical; }
+  .submit-btn { background: #1F3864; color: #FFD700; font-weight: bold; border: none; padding: 12px 32px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+  .submit-btn:hover { background: #2a4f8a; }
+  footer { background: #111; color: #aaa; text-align: center; padding: 32px 24px; font-size: .88rem; }
+  footer a { color: #FFD700; }
+  .pill { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: .8rem; font-weight: bold; }
+  .pill-blue { background: #e8eef7; color: #1F3864; }
+  .pill-gold { background: #FFF9C4; color: #8a6d00; }
+  .pill-green { background: #e8f5e9; color: #2E7D32; }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html" style="background:rgba(255,255,255,.2);color:#FFD700;">Northview TSA</a>
+    <ul>
+      <li><a href="index.html" style="background:rgba(255,255,255,.2);color:#FFD700;">Home</a></li>
+      <li><a href="join.html">Join</a></li>
+      <li><a href="competitions.html">Competitions</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="stem-academy.html">STEM Academy</a></li>
+      <li><a href="officers.html">Officers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <h1>Northview TSA</h1>
+  <div class="sub">Engineering the Future at Northview High School</div>
+  <p>The Technology Student Association (TSA) is a national organization of students engaged in STEM. At Northview, we compete at state and national levels, run community programs, and build real engineering skills.</p>
+  <a class="btn" href="join.html">Join TSA</a>
+  <a class="btn btn-outline" href="competitions.html">View Competitions</a>
+</div>
+
+<div class="section">
+  <h2 class="section-title">What Is TSA?</h2>
+  <p class="section-sub">A chapter of 60+ members competing, building, and leading.</p>
+  <div class="two-col">
+    <div>
+      <p style="line-height:1.8;color:#444">The Technology Student Association (TSA) is a national CTSO with over 300,000 members. At Northview, our chapter competes in events ranging from structural design and CAD to coding and robotics. Members gain hands-on experience, leadership skills, and a community of peers who are passionate about STEM.</p>
+      <p style="line-height:1.8;color:#444;margin-top:16px">We also run VEX Robotics and ECAR (Electric Car) subclubs, a summer STEM Academy for middle schoolers, and community service initiatives including Habitat for Humanity.</p>
+    </div>
+    <div class="cards" style="grid-template-columns:1fr 1fr;">
+      <div class="card"><h3>60+</h3><p>Active members</p></div>
+      <div class="card"><h3>40+</h3><p>TSA events to compete in</p></div>
+      <div class="card"><h3>VEX & ECAR</h3><p>Robotics subclubs</p></div>
+      <div class="card"><h3>STEM Academy</h3><p>Summer program</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight">
+<div class="section">
+  <h2 class="section-title">Chapter Highlights</h2>
+  <p class="section-sub">Recent news and announcements.</p>
+  <div class="cards">
+    <div class="card"><div class="tag">Competition</div><h3>State Leadership Conference Results</h3><p>Results and recaps from SLC will be posted here after the conference.</p></div>
+    <div class="card"><div class="tag">Program</div><h3>STEM Academy Registration Open</h3><p>Our summer STEM Academy for middle schoolers is accepting registrations. $5/day, 5 days.</p></div>
+    <div class="card"><div class="tag">Chapter</div><h3>New Officer Elections Coming Up</h3><p>Officer elections are held at the end of each school year. Interest meetings TBD.</p></div>
+  </div>
+</div>
+</div>
+
+<div class="banner">
+  <h2>Ready to Join?</h2>
+  <p>No prior experience needed. Just curiosity, ambition, and a willingness to build something.</p>
+  <a class="btn" href="join.html">Get Started</a>
+</div>
+
+
+<footer>
+  <p>Northview TSA · Technology Student Association</p>
+  <p style="margin-top:8px"><a href="mailto:northviewtsa@gmail.com">northviewtsa@gmail.com</a> &nbsp;·&nbsp; <a href="https://instagram.com/northviewtsa">Instagram</a> &nbsp;·&nbsp; <a href="https://tiktok.com/@northviewtsa">TikTok</a></p>
+  <p style="margin-top:10px;color:#666">© 2026 Northview TSA. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
