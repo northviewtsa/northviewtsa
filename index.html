@@ -73,6 +73,28 @@
   .pill-blue { background: #e8eef7; color: #1F3864; }
   .pill-gold { background: #FFF9C4; color: #8a6d00; }
   .pill-green { background: #e8f5e9; color: #2E7D32; }
+  .faq-answer {
+  display: none;
+  margin-left: 1.5em;
+  color: #333;
+}
+
+.faq-question {
+  cursor: pointer;
+  background: #f3f3f3;
+  padding: .7em;
+  margin: 0;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #e4e4e4;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
 </style>
 
 </head>
