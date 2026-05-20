@@ -123,13 +123,27 @@
 
   <hr class="divider"/>
 
-  <h2 class="section-title">Frequently Asked Questions</h2>
-  <div class="faq">
-    <div class="faq-item"><h4>What is TSA?</h4><p>The Technology Student Association is a national career and technical student organization for students in STEM programs. We compete in 40+ events at regional, state, and national levels.</p></div>
-    <div class="faq-item"><h4>Do I need prior experience?</h4><p>No — TSA welcomes students at all experience levels. Many of our most accomplished members started with zero background in engineering or coding.</p></div>
-    <div class="faq-item"><h4>What's the time commitment?</h4><p>General meetings are every 2–3 weeks. Competitions are on weekends. STEM Academy and community service are optional but earn you points toward honor cords.</p></div>
-    <div class="faq-item"><h4>What are VEX and ECAR?</h4><p>VEX Robotics and ECAR (Electric Car) are subclubs within Northview TSA. When you fill out the membership form, you can indicate interest in one or both.</p></div>
-    <div class="faq-item"><h4>How do I earn honor cords?</h4><p>Honor cords are awarded to seniors who accumulate enough points through meetings, competitions, and service. Thresholds: Bronze = 100 pts, Silver = 175 pts, Gold = 250 pts.</p></div>
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+  <div class="faq-item">
+    <h4 class="faq-question">What is TSA?</h4>
+    <p class="faq-answer">The Technology Student Association is a national career and technical student organization for students in STEM programs. We compete in 40+ events at regional, state, and national levels.</p>
+  </div>
+  <div class="faq-item">
+    <h4 class="faq-question">Do I need prior experience?</h4>
+    <p class="faq-answer">No — TSA welcomes students at all experience levels. Many of our most accomplished members started with zero background in engineering or coding.</p>
+  </div>
+  <div class="faq-item">
+    <h4 class="faq-question">What's the time commitment?</h4>
+    <p class="faq-answer">General meetings are every 2–3 weeks. Competitions are on weekends. STEM Academy and community service are optional but earn you points toward honor cords.</p>
+  </div>
+  <div class="faq-item">
+    <h4 class="faq-question">What are VEX and ECAR?</h4>
+    <p class="faq-answer">VEX Robotics and ECAR (Electric Car) are subclubs within Northview TSA. When you fill out the membership form, you can indicate interest in one or both.</p>
+  </div>
+  <div class="faq-item">
+    <h4 class="faq-question">How do I earn honor cords?</h4>
+    <p class="faq-answer">Honor cords are awarded to seniors who accumulate enough points through meetings, competitions, and service. Thresholds: Bronze = 100 pts, Silver = 175 pts, Gold = 250 pts.</p>
   </div>
 </div>
 
@@ -139,6 +153,12 @@
   <p style="margin-top:8px"><a href="mailto:northviewtsa@gmail.com">northviewtsa@gmail.com</a> &nbsp;·&nbsp; <a href="https://instagram.com/northviewtsa">Instagram</a> &nbsp;·&nbsp; <a href="https://tiktok.com/@northviewtsa">TikTok</a></p>
   <p style="margin-top:10px;color:#666">© 2026 Northview TSA. All rights reserved.</p>
 </footer>
-
+<script>
+document.querySelectorAll('.faq-question').forEach(function(question) {
+  question.addEventListener('click', function() {
+    this.parentElement.classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
