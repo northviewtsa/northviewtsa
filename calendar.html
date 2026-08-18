@@ -73,6 +73,28 @@
   .pill-blue { background: #e8eef7; color: #1F3864; }
   .pill-gold { background: #FFF9C4; color: #8a6d00; }
   .pill-green { background: #e8f5e9; color: #2E7D32; }
+  .calendar-frame {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;      /* the box size as seen on the page */
+  position: relative;
+}
+.calendar-frame iframe {
+  width: 1600px;       /* the iframe's real/full size */
+  height: 900px;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.55);   /* shrink factor: box-width / iframe-width, roughly */
+  transform-origin: top left;
+}
+@media(max-width:700px){
+  .calendar-frame { height: 260px; }
+  .calendar-frame iframe { transform: scale(0.3); }
+}
 </style>
 
 </head>
@@ -99,10 +121,9 @@
   <h2 class="section-title">Chapter Calendar</h2>
   <p class="section-sub">Make sure to frequently check this throughout the year!</p>
 
-  <div class="iframe-wrap">
+  <div class="calendar-frame">
     <iframe
       src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS5EAo94bHO4BnIq5pOqJPcUdHZKsJmwyNID_Gpl7wYPQMXbqHssjZ4lxyFhxHCxskqx0UsMUpvnew3/pubhtml?widget=true&amp;headers=false&amp;rm=minimal"
-      style="height:600px;"
       scrolling="no"
       title="Northview TSA Calendar">
     </iframe>
