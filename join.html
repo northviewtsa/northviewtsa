@@ -12,7 +12,8 @@
   a { color: #1F3864; text-decoration: none; }
   nav { background: #1F3864; position: sticky; top: 0; z-index: 100; }
   .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 58px; }
-  .logo { color: #FFD700; font-weight: bold; font-size: 1.2rem; letter-spacing: .5px; }
+  .logo { display: flex; align-items: center; gap: 10px; color: #FFD700; font-weight: bold; font-size: 1.2rem; letter-spacing: .5px; }
+  .logo img { width: 40px; height: 40px; object-fit: contain; }
   nav ul { list-style: none; display: flex; gap: 6px; }
   nav ul a { color: #fff; padding: 8px 14px; border-radius: 4px; font-size: .92rem; transition: background .2s; }
   nav ul a:hover { background: rgba(255,255,255,.15); }
@@ -106,7 +107,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html">Northview TSA</a>
+    <a class="logo" href="index.html"><img src="assets/northview-tsa-logo.png" alt="Northview TSA logo">Northview TSA</a>
     <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
